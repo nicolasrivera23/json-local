@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,77 +7,195 @@
 }
 
 body {
-  font-family: Raleway, Verdana, Tahoma, sans-serif;
-  font-size: clamp(16px, 8vw, 32px);
+  font-size: clamp(16px, 4vw, 32px);
+  font-family: Michroma, Verdana, Tahoma, sans-serif;
 }
 
-.contenedor_producto {
+.titulo {
+  text-align: center;
+  margin: 48px;
+}
+
+.total-favoritos {
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+}
+
+.icono-container {
+  position: relative;
+}
+
+.item-cantidad {
+  position: absolute;
+}
+
+.seccion-favs {
+  border: 2px solid black;
+  background-color: rgb(198, 197, 197);
+}
+
+.contenedor-producto {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.flex-favs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hide {
+  display: none;
+  padding: 8px;
+}
+
+.icono-del:hover + .hide {
+  display: block;
+  color: red;
+  font-size: 16px;
+  border: 2px solid red;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: 24px;
+}
+.card {
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 24px;
+  overflow-wrap: break-word;
+}
+.card-fav {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  background-color: azure;
-  padding: 32px;
-  gap: 10px;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+  border: 2px solid black;
+  border-radius: 8px;
+  overflow-wrap: break-word;
+  padding: 12px;
+  font-size: clamp(16px, 4vw, 32px);
 }
 
-.card {
-  max-width: 300px;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 15px;
-  background: #EEAECA;
-  background: radial-gradient(circle,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+.card-fav img {
+  width: 100px;
+  height: 100px;
+}
+
+.fav {
+  background-color: #fff;
 }
 
 .nombre {
-  height: 50px;
+  height: 48px;
+}
+.precio {
+  color: darkgreen;
+  background-color: rgb(175, 237, 175);
   text-align: center;
 }
 
-.precio {
-  text-align: center;
-  color: green;
+.precio-total {
+  border: 2px solid white;
+  border-radius: 8px;
+  color: darkgreen;
+  margin: 24px;
+  padding: 12px;
 }
 
 .botonera {
   text-align: center;
-  margin: 16px 0;
+  margin-top: 24px;
 }
 
-.button {
-  font-size: 27px;
+.btn-add, .btn-del {
+  font-size: 24px;
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-family: Michroma, Verdana, Tahoma, sans-serif;
 }
 
-.button:hover {
-  background-color: #e3eae0;
-  border: 2px solid green;
+.btn-del:hover {
+  font-size: 26px;
+  border: solid 2px red;
+  color: red;
+}
+
+.btn-add:hover {
+  font-size: 26px;
+  border: solid 2px green;
   color: green;
-  border-radius: 10px;
-  font-size: 33px;
 }
 
-.description {
-  margin-top: 18px;
+.seccion-favs {
+  margin: 48px;
 }
 
-.imagen {
-  border-radius: 10px;
-  height: 200px;
-  width: 270px;
+.contenedor-favoritos {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 32px;
 }
 
-footer {
-  background-color: black;
+.icono-container {
+  position: relative;
+}
+
+.icono-cart {
+  text-align: right;
+}
+
+#item_cantidad {
+  position: absolute;
+  top: 0;
+  right: 20px; /* Ajusta la posición horizontal */
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
+  font-size: 12px;
 }
 
-.footer_uno {
-  background-color: white;
-  color: black;
+/*MQ celulares*/
+@media screen and (240px <= width <= 960px) {
+  .imagen {
+    width: 200px;
+    height: 200px;
+  }
+  .contenedor-producto {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card {
+    width: 250px;
+    text-align: center;
+  }
+  .card-fav {
+    flex-direction: column;
+    font-size: 24px;
+  }
 }
-.footer_dos {
-  background-color: black;
+
+/*MQ Tablets*/
+@media screen and (min-width: 960.1px) {
+  .imagen {
+    width: 300px;
+    height: 300px;
+  }
+  .contenedor-productos {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 400px;
+  }
 }
